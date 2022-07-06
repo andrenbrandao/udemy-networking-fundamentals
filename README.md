@@ -31,6 +31,8 @@ nc -t 127.0.0.1 5500
 nc -u 127.0.0.1 5500
 ```
 
+![Terminal Commands](.github/assets/terminal.gif)
+
 ## License
 
 [MIT](LICENSE) © André Brandão
