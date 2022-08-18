@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"net"
 	"strings"
@@ -24,16 +25,19 @@ func main() {
 	count := 0
 
 	for {
-		buf := make([]byte, 1024)
-		conn.Read(buf)
+		s, err := bufio.NewReader(conn).ReadString('\n')
 
-		if strings.HasPrefix(string(buf), "exit") {
+		if err != nil {
+			panic(err)
+		}
+
+		if strings.TrimSpace(s) == "exit" {
 			fmt.Println("Closing connection...")
 			conn.Close()
 			break
 		}
 
-		fmt.Println(fmt.Sprintf("Message received: %s, from address %s", buf, conn.RemoteAddr().String()))
+		fmt.Println(fmt.Sprintf("Message received: '%s', from address %s", strings.TrimSuffix(s, "\n"), conn.RemoteAddr().String()))
 		conn.Write([]byte(fmt.Sprintf("Message received number %d\n", count)))
 		count += 1
 	}

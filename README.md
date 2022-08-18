@@ -33,6 +33,8 @@ nc -u 127.0.0.1 5500
 
 ![Terminal Commands](.github/assets/terminal.gif)
 
+Note: I have improved the TCP and UDP servers in Go after reading [this article](https://www.linode.com/docs/guides/developing-udp-and-tcp-clients-and-servers-in-go/) from Linode.
+
 ## Nagle's Algorithm
 
 This algorithm can affect network performance and to understand it better [this article](https://blog.gopheracademy.com/advent-2019/control-packetflow-tcp-nodelay/) explains the problems with it.
