@@ -60,6 +60,10 @@ conn.SetNoDelay(false) // Disable TCP_NODELAY; Nagle's Algorithm takes action.
 
 It is also important to know the Delayed Acknowledgement algorithm, because when it works together with Nagle's Algorithm, we may have 400ms delays. The `TCP_QUICKACK` is the socket option to disable it. [Read more](https://www.extrahop.com/company/blog/2016/tcp-nodelay-nagle-quickack-best-practices/).
 
+## Extras
+
+- Read how to [Build a TCP Connection Pool From Scratch With Go](https://betterprogramming.pub/build-a-tcp-connection-pool-from-scratch-with-go-d7747023fe14)
+
 ## License
 
 [MIT](LICENSE) © André Brandão
